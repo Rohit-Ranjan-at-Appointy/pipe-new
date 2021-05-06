@@ -2,6 +2,7 @@ CHOICES = [];
 
 def app = 'unknown'
 pipeline {
+  agent {label 'agent'}
   stages {
     stage("build") {
       steps {
