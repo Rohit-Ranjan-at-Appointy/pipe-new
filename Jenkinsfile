@@ -14,11 +14,12 @@ pipeline {
         
         echo "${Module}"
         sh cd "${Module}" 
- 	      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
  	      def customImage = docker.build("qwerty0901/para-v10", "-f Dockerfile .")
         customImage.push()
         }
-       }
+        }
+        }
       }
     }
   }
