@@ -9,7 +9,6 @@ pipeline {
         env.Module = input message: 'what are we deploying today',
         parameters:[choice(choices: CHOICES, description: 'select a tag forn this')]
         
-        echo "Deploying ${env.Module}.
         echo "${Module}"
         sh cd "${Module}" 
  	      checkout scm
