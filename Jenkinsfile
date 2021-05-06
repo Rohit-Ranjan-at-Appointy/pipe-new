@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('build') {
       script {
-        CHOICES = ['service1', 'service2','service3', 'service4','service5', description: '']
+        CHOICES = ['service1', 'service2','service3', 'service4','service5']
         env.Module = input message: 'what are we deploying today',
           parameters:[choice{choices: CHOICES, description: 'select a tag forn this'}]
         
